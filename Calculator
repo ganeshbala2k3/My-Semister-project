@@ -1,0 +1,222 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<math.h>
+void addition();
+void substraction();
+void multiplication();
+void division();
+void remainder1();
+void MODE();
+void trignometric();
+void equation();
+void lineareq();
+void cubiceq();
+void power();
+void logarithm();
+int main()
+{ 
+    int n;
+    while(1){
+   printf("\n\ncalculator project\n");
+   printf("1.addition\n2.substraction\n3.multiplication\n4.division\n5.remainder\n6.MODE\n7.exit\n");
+   printf("enter the choice\n");
+   scanf("%d",&n);
+   switch(n)
+   {
+       case 1: addition();
+       break;
+       case 2: substraction();
+       break;
+       case 3: multiplication();
+       break;
+       case 4: division();
+       break;
+       case 5: remainder1();
+       break;
+       case 6: MODE();
+       break;
+       case 7: exit(0);
+       break;
+       default: printf("Wrong choice!");
+   }
+    }
+   return 0;
+}
+void addition()
+{
+    int n;
+    printf("enter the number of inputs\n");
+    scanf("%d",&n);
+    int a[100],sum=0;
+    printf("enter the inputs\n");
+    for(int i=0;i<n;i++)
+    {
+        scanf("%d",&a[i]);
+    }
+    for(int i=0;i<n;i++)
+    {
+        sum=sum+a[i];
+    }
+    printf("**Sum**=%d\n",sum);
+}
+void substraction()
+{
+    int k1,k2;
+    printf("enter the two inputs\n");
+    scanf("%d%d",&k1,&k2);
+    printf("substraction = %d\n",k1-k2);
+}
+void multiplication()
+{
+    float mul=1;
+    int n;
+    float a[100];
+    printf("enter the no of inputs\n");
+     scanf("%d",&n);
+     printf("enter the inputs\n");
+     for(int i=0;i<n;i++)
+     {
+         scanf("%f",&a[i]);
+     }
+     for(int i=0;i<n;i++)
+     {
+         mul=mul*a[i];
+     }
+     printf("multiplication=%.3f\n",mul);
+}
+void division()
+{
+    printf("enter the two inputs\n");
+    float a,b;
+    scanf("%f%f",&a,&b);
+    printf("divsion =%.2f\n",a/b);
+}
+void remainder1(){
+    printf("enter the two inputs\n");
+    int a,b;
+    scanf("%d%d",&a,&b);
+    printf("divsion =%d\n",a%b);
+}
+void MODE()
+{
+    int n;
+    printf("**MODE**\n");
+    printf("\t1)trignometric value\n\t2.equation solving\n\t3.power\n\t4.logirthm value\n");
+    printf("enter the choice\n");
+   scanf("%d",&n);
+   switch(n)
+   {
+       case 1:trignometric();
+       break;
+       case 2:equation();
+       break;
+       case 3: power();
+       break;
+       case 4: logarithm();
+       break;
+       default: printf("invalid input!\n");
+       
+   }
+    
+}
+void trignometric()
+   {
+       int n;
+       float x;
+       printf("\n1.sin x\n2.cos x\n3.tanx\n4.cosecx\n5.secx\n6.cotx\n");
+       printf("enter the choice\n");
+       scanf("%d",&n);
+       printf("enter the angle\n");
+       scanf("%f",&x);
+       switch(n)
+       {
+           case 1: 
+           printf("sinx=%f\n",sin(x*((3.14159)/180)));
+           break;
+           case 2:
+           printf("cosx=%f\n",cos(x*((3.14159)/180)));
+           break;
+           case 3:
+           printf("tan=%f\n",tan(x*(3.14159/180)));
+           break;
+           case 4:
+            printf("cosecx=%f\n",1/(sin(x*((3.14159)/180))));
+           break;
+           case 5:
+           printf("secx=%f\n",1/(cos(x*((3.14159)/180))));
+           break;
+           case 6:
+           printf("cotx=%f\n",1/(tan(x*((3.14159)/180))));
+           break;
+           default:
+           printf("remaining functions to be added!!\n");
+       }
+       
+   }
+   void equation()
+   {
+       int n;
+       printf("1.ax2+by+c=0\n2.ax3+by+cz+d=0\n");
+       printf("enter the choice\n");
+       scanf("%d",&n);
+       switch(n)
+       {
+           case 1: lineareq();
+           break;
+           case 2: cubiceq();
+           break;
+           default: printf(" ");
+       }
+   }
+   void lineareq(){
+       float a,b,c,d;
+       printf("enter the coefficients\n");
+       scanf("%f%f%f",&a,&b,&c);
+       d = b*b-4*a*c;
+       float root1,root2;
+       if(d>0)
+       {
+           root1=(-b+sqrt(d))/(2*a);
+           root2=(-b-sqrt(d))/(2*a);
+           printf("%.2f %.2f\n",root1,root2);
+       }
+       else if(d==0)
+       {
+           root1=root2=(-b)/(2*a);
+           printf("%.2f %.2f",root1,root2);
+       }
+       else
+       {
+           root1=-b/2*a;
+           root2=sqrt(d)/(2*a);
+           printf("%.2f %.2f",root1,root2);
+       }
+   }
+   void cubiceq()
+   {
+       printf("  ");
+   }
+  void power()
+  {
+      printf("enter the base number\n");
+      float x,y;
+      scanf("%f",&x);
+      printf("enter the power value\n");
+      scanf("%f",&y);
+     printf("power = %.2f", pow(x,y));
+  }
+  void logarithm()
+  {
+      printf("enter the number\n");
+      int k;
+      scanf("%d",&k);
+      printf("%.2f",2.303*log(k));
+      
+  }
+   
+
+   
+
+
+
+
